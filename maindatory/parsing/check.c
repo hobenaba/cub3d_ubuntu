@@ -58,33 +58,29 @@ int	check_rgb(t_infos2 *map_col)
 void	check_tex_valid(t_infos1 *map_tex)
 {
 	t_infos1	*p;
-	int			a;
-	int			b;
-	int			c;
-	int			d;
-	int			e;
+	t_helper	h;
 
 	p = map_tex;
-	a = 0;
-	b = 0;
-	c = 0;
-	d = 0;
-	e = 0;
+	h.a = 0;
+	h.b = 0;
+	h.c = 0;
+	h.d = 0;
+	h.e = 0;
 	while (p)
 	{
-		if (a == 0 && !ft_strcmp(p ->type, "NO"))
-			a++;
-		else if (b == 0 && !ft_strcmp(p ->type, "SO"))
-			b++;
-		else if (c == 0 && !ft_strcmp(p ->type, "WE"))
-			c++;
-		else if (d == 0 && !ft_strcmp(p ->type, "EA"))
-			d++;
+		if (h.a == 0 && !ft_strcmp(p ->type, "NO"))
+			h.a++;
+		else if (h.b == 0 && !ft_strcmp(p ->type, "SO"))
+			h.b++;
+		else if (h.c == 0 && !ft_strcmp(p ->type, "WE"))
+			h.c++;
+		else if (h.d == 0 && !ft_strcmp(p ->type, "EA"))
+			h.d++;
 		else
-			e++;
+			h.e++;
 		p = p->next;
 	}
-	if (a != 1 || b != 1 || c != 1 || d != 1 || e != 0)
+	if (h.a != 1 || h.b != 1 || h.c != 1 || h.d != 1 || h.e != 0)
 		print_error(2);
 }
 

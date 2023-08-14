@@ -40,7 +40,16 @@ typedef struct s_infos
 	int			col_len;
 }	t_infos;
 
+typedef struct s_helper
+{
+	int			a;
+	int			b;
+	int			c;
+	int			d;
+	int			e;
+}	t_helper;
 // function utils that helps me ou in the work
+
 void		print_error(int num);
 char		*bring_last_dot(char *map);
 char		**save_map(char *map);

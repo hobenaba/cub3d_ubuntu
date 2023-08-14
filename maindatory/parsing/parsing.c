@@ -99,7 +99,9 @@ void	map(char *map, t_infos *cub)
 	while (str[i] && ft_atoi(str[i]) == 0
 		&& (ft_strlen(s[0]) == 1 || ft_strlen(s[0]) == 2))
 	{
-		if (ft_strlen(s[0]) == 1 && s[1] != NULL)
+		if (ft_strlen(s[0]) == 1 && s[1] == NULL)
+			print_error(3);
+		if (ft_strlen(s[0]) == 1)
 			color(cub, str, i, s);
 		else if (ft_strlen(s[0]) == 2 && s[1] != NULL)
 			texture (cub, str, i, s[0]);
@@ -108,7 +110,5 @@ void	map(char *map, t_infos *cub)
 	}
 	free_dlptr(s);
 	real_map(cub, str, i);
-	cub -> col_len = dl_strlen(cub -> map, 0);
-	cub -> row_len = ft_strlen (cub -> map[0]);
 	free_dlptr(str);
 }

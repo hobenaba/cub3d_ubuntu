@@ -25,6 +25,6 @@ int		ft_adress_printf(unsigned long n);
 int		ft_hexa_printf(unsigned long n, char c);
 int		ft_printf(const char *format, ...);
 int		ft_len(long n);
-int     ft_strlen(const char *str);
+int		ft_strlen(const char *str);
 
 #endif

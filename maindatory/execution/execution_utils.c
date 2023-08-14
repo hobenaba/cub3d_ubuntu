@@ -65,6 +65,8 @@ void	init_tools(t_exec *cub)
 
 	t = cub -> infos.map_tex;
 	init_for_wind(cub);
+	cub -> infos.col_len = dl_strlen(cub ->infos.map, 0);
+	cub -> infos.row_len = ft_strlen (cub -> infos.map[0]);
 	cub->text = malloc (sizeof(t_texture) * 4);
 	cub->subray_ang = ((float)FOV / (float)S_WIDTH);
 	cub->ray_inf->projp_d = ((S_WIDTH / 2) / tan(((FOV / 2) * M_PI) / 180));

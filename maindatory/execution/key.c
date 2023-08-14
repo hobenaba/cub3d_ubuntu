@@ -26,8 +26,9 @@ int	key_hook(t_exec *cub)
 
 int	key_press(int key, t_exec *cub)
 {
-	if (key == 53)
+	if (key == 9)
 	{
+		printf ("imhier\n");
 		mlx_destroy_window(cub ->mlx.p_mlx, cub -> mlx.p_win);
 		exit (0);
 	}

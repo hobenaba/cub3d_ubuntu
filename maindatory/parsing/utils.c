@@ -104,10 +104,10 @@ char	*the_process(char *str, int fd)
 		}
 		if (a == 1 && !ft_strcmp(str, "\n"))
 			print_error(11);
-		if (ft_atoi (str) != 0)
+		if (str != NULL && ft_atoi (str) != 0)
 			a = 1;
 		if ((a == 0 && (ft_strcmp(str, "\n") && ft_check_space(str))) || a == 1)
-				s1 = ft_strjoin(s1, str);
+			s1 = ft_strjoin(s1, str);
 		free (str);
 		str = get_next_line(fd);
 	}
