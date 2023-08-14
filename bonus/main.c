@@ -62,7 +62,7 @@ int	main(int ac, char **av)
 		mlx_hook(cub.mlx.p_win, 17, 1L << 0, close_window2, &cub);
 		mlx_hook(cub.mlx.p_win, 2, 1L << 0, key_press, &cub);
 		mlx_hook(cub.mlx.p_win, 3, 1L << 1, key_release, &cub);
-		mlx_hook(cub.mlx.p_win, 6, 0, mouse_move, &cub);
+		mlx_hook(cub.mlx.p_win, 6, 1L << 6, mouse_move, &cub);
 		mlx_loop(cub.mlx.p_mlx);
 	}
 }
