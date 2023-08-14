@@ -26,7 +26,7 @@ int	key_hook(t_exec *cub)
 
 int	key_press(int key, t_exec *cub)
 {
-	//printf ("%d\n", key);
+	printf ("%d\n", key);
 	if (key == 65307)
 	{
 		mlx_destroy_window(cub ->mlx.p_mlx, cub -> mlx.p_win);
@@ -51,19 +51,19 @@ int	key_press(int key, t_exec *cub)
 
 int	key_release(int key, t_exec *cub)
 {
-	if (key == 0)
+	if (key == 97)
 		cub->move_left = 0;
-	else if (key == 1)
+	else if (key == 115)
 		cub->move_down = 0;
-	else if (key == 2)
+	else if (key == 100)
 		cub->move_right = 0;
-	else if (key == 13)
+	else if (key == 119)
 		cub->move_up = 0;
-	else if (key == 123)
+	else if (key == 65361)
 		cub->rot_left = 0;
-	else if (key == 124)
+	else if (key == 65363)
 		cub->rot_right = 0;
-	else if (key == 49)
+	else if (key == 32)
 		cub->move_weapon = 0;
 	return (0);
 }

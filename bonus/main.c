@@ -59,9 +59,9 @@ int	main(int ac, char **av)
 		map(av[1], &(cub.infos));
 		init_bonus_tools(&cub);
 		mlx_loop_hook(cub.mlx.p_mlx, ft_execute, &cub);
-		mlx_hook(cub.mlx.p_win, 17, 0, close_window2, &cub);
-		mlx_hook(cub.mlx.p_win, 2, 0, key_press, &cub);
-		mlx_hook(cub.mlx.p_win, 3, 0, key_release, &cub);
+		mlx_hook(cub.mlx.p_win, 17, 1L << 0, close_window2, &cub);
+		mlx_hook(cub.mlx.p_win, 2, 1L << 0, key_press, &cub);
+		mlx_hook(cub.mlx.p_win, 3, 1L << 1, key_release, &cub);
 		mlx_hook(cub.mlx.p_win, 6, 0, mouse_move, &cub);
 		mlx_loop(cub.mlx.p_mlx);
 	}

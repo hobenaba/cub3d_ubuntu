@@ -12,13 +12,6 @@
 
 #include "../cub3d.h"	
 
-int	close_window2(t_exec *cub)
-{
-	mlx_destroy_window(cub ->mlx.p_mlx, cub -> mlx.p_win);
-	exit (0);
-	return (0);
-}
-
 void	ft_rayang(t_raycast *ray_inf, char spaw_orient)
 {
 	if (spaw_orient == 'N')
@@ -75,7 +68,6 @@ int	main(int ac, char **av)
 		cub.mlx.p_mimg = mlx_new_image(cub.mlx.p_mlx, MS_WIDTH, MS_HEIGHT);
 		init_tools(&cub);
 		ft_init_keys(&cub);
-		mlx_hook(cub.mlx.p_win, 17, 0, close_window2, &cub);
 		mlx_hook(cub.mlx.p_win, 2, 1L << 0, key_press, &cub);
 		mlx_hook(cub.mlx.p_win, 3, 1L << 1, key_release, &cub);
 		mlx_loop_hook(cub.mlx.p_mlx, ft_execute, &cub);
