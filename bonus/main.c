@@ -48,7 +48,6 @@ int	main(int ac, char **av)
 {
 	t_exec	cub;
 
-	init(&(cub.infos));
 	if (ac != 2)
 	{
 		printf("Error\nOnly 1 argument\n");
@@ -56,13 +55,15 @@ int	main(int ac, char **av)
 	}
 	else
 	{
+		init(&(cub.infos));
 		map(av[1], &(cub.infos));
 		init_bonus_tools(&cub);
-		mlx_loop_hook(cub.mlx.p_mlx, ft_execute, &cub);
+		ft_execute(&cub);
 		mlx_hook(cub.mlx.p_win, 17, 1L << 0, close_window2, &cub);
 		mlx_hook(cub.mlx.p_win, 2, 1L << 0, key_press, &cub);
 		mlx_hook(cub.mlx.p_win, 3, 1L << 1, key_release, &cub);
 		mlx_hook(cub.mlx.p_win, 6, 1L << 6, mouse_move, &cub);
+		mlx_loop_hook(cub.mlx.p_mlx, key_hook, &cub);
 		mlx_loop(cub.mlx.p_mlx);
 	}
 }

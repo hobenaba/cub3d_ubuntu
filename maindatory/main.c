@@ -44,7 +44,8 @@ void	ft_init_keys(t_exec *cub)
 	cub->move_right = 0;
 	cub->move_left = 0;
 	cub->rot_right = 0;
-	cub->rot_right = 0;
+	cub->rot_left = 0;
+	cub->move_weapon = 0;
 }
 
 int	main(int ac, char **av)
@@ -68,9 +69,11 @@ int	main(int ac, char **av)
 		cub.mlx.p_mimg = mlx_new_image(cub.mlx.p_mlx, MS_WIDTH, MS_HEIGHT);
 		init_tools(&cub);
 		ft_init_keys(&cub);
+		ft_execute(&cub);
 		mlx_hook(cub.mlx.p_win, 2, 1L << 0, key_press, &cub);
 		mlx_hook(cub.mlx.p_win, 3, 1L << 1, key_release, &cub);
-		mlx_loop_hook(cub.mlx.p_mlx, ft_execute, &cub);
+		// mlx_loop_hook(cub.mlx.p_mlx, ft_execute, &cub);
+		mlx_loop_hook(cub.mlx.p_mlx, key_hook, &cub);
 		mlx_loop(cub.mlx.p_mlx);
 	}
 }

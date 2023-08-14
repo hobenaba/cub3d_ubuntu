@@ -21,12 +21,12 @@ int	key_hook(t_exec *cub)
 	else if (cub->move_up || cub->move_left
 		|| cub->move_down || cub->move_right)
 		ft_player_move(cub);
+	ft_execute(cub);
 	return (0);
 }
 
 int	key_press(int key, t_exec *cub)
 {
-	printf ("%d\n", key);
 	if (key == 65307)
 	{
 		mlx_destroy_window(cub ->mlx.p_mlx, cub -> mlx.p_win);

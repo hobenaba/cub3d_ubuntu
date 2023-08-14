@@ -61,6 +61,13 @@ void	init_bonus_tools(t_exec *cub)
 			S_WIDTH, S_HEIGHT, "CUB3D");
 	cub->mlx.p_img = mlx_new_image(cub->mlx.p_mlx, S_WIDTH, S_HEIGHT);
 	cub->mlx.p_mimg = mlx_new_image(cub->mlx.p_mlx, MS_WIDTH, MS_HEIGHT);
+	cub->move_down = 0;
+	cub->move_up = 0;
+	cub->move_right = 0;
+	cub->move_left = 0;
+	cub->rot_right = 0;
+	cub->rot_left = 0;
+	cub->move_weapon = 0;
 	init_tools(cub);
 	init_bonus(cub);
 }

@@ -54,7 +54,7 @@ void	ft_rayrelated(t_raycast *ray_inf)
 
 int	ft_execute(t_exec *cub)
 {
-	key_hook(cub);
+	// key_hook(cub);
 	ft_rayrelated(cub->ray_inf);
 	cub->ray_inf->wall.pixel = 0;
 	while (cub->ray_inf->wall.pixel < S_WIDTH)

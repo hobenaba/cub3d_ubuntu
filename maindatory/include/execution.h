@@ -157,5 +157,6 @@ void		draw_weapon(t_exec *cub, int frame);
 void		ft_player_move(t_exec *cub);
 void		init_for_wind(t_exec *cub);
 void		init_bonus_tools(t_exec *cub);
+void		ft_init_keys(t_exec *cub);
 
 #endif
