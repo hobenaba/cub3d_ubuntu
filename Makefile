@@ -1,6 +1,6 @@
 CC = gcc-11
 
-CFLAGS= -Wall -Wextra -Werror -fsanitize=address
+CFLAGS= -Wall -Wextra -Werror
 
 NAME=cub3D
 

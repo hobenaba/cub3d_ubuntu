@@ -35,7 +35,7 @@ void	color(t_infos *cub, char **str, int i, char **s)
 	int		a;
 	int		*info;
 
-	if (check_comma(str[i]))
+	if (check_comma(str[i]) || s[1] == NULL)
 		print_error(4);
 	s1 = ft_strchr(str[i], s[1][0]);
 	c = ft_split(s1, ',');
@@ -99,11 +99,11 @@ void	map(char *map, t_infos *cub)
 	while (str[i] && ft_atoi(str[i]) == 0
 		&& (ft_strlen(s[0]) == 1 || ft_strlen(s[0]) == 2))
 	{
-		if (ft_strlen(s[0]) == 1 && s[1] == NULL)
-			print_error(3);
 		if (ft_strlen(s[0]) == 1)
 			color(cub, str, i, s);
-		else if (ft_strlen(s[0]) == 2 && s[1] != NULL)
+		if (ft_strlen(s[0]) == 2 && s[1] == NULL)
+			print_error(2);
+		else if (ft_strlen(s[0]) == 2)
 			texture (cub, str, i, s[0]);
 		free_dlptr(s);
 		s = ft_split (str[++i], ' ');

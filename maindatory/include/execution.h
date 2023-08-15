@@ -24,7 +24,7 @@
 # define MTS_HEIGHT	16
 # define P_HEIGHT	32
 # define FOV		60
-# define SPEED		5
+# define SPEED		3
 
 typedef struct s_wall
 {
