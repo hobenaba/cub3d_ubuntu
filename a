@@ -1,5 +1,0 @@
-clear
-
-valgrind --leak-check=full ./cub3D ./maps/map.cub > valgrind_output.txt 2>&1
-
-grep '[0-9]* bytes in [0-9]* blocks' valgrind_output.txt
