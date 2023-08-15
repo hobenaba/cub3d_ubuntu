@@ -65,7 +65,6 @@ void	ft_weapon(t_exec *cub)
 
 int	ft_execute(t_exec *cub)
 {
-	// key_hook(cub);
 	ft_rayrelated(cub->ray_inf);
 	cub->ray_inf->wall.pixel = 0;
 	draw_minimap(cub);
