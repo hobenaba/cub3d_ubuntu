@@ -12,9 +12,6 @@
 
 #ifndef CUB3D_H
 # define CUB3D_H
-
-# define ESCAPE_KEY 53
-
 # include "maindatory/include/parsing.h"
 # include "maindatory/include/execution.h"
 # include <mlx.h>

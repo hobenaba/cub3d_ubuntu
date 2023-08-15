@@ -41,15 +41,15 @@ void	color(t_infos *cub, char **str, int i, char **s)
 	c = ft_split(s1, ',');
 	info = malloc(3 * sizeof(int));
 	j = -1;
+	if (dl_strlen(c, 0) < 3)
+		print_error(4);
 	while (++j < 3 && c[j] != NULL)
 	{
 		a = 0;
 		info[j] = ft_atoi(c[j]);
-		while (c[j][a] && (c[j][a] == ' ' || c[j][a] == '+' || (c[j][a] == '0'
-			&& (c[j][a + 1] != '\0' && ft_isdigit(c[j][a + 1])))))
+		while (c[j][a] && (c[j][a] == ' '))
 			a++;
-		if (my_countnbr(info[j]) != space(c[j]) - a
-			&& ft_strcmp(c[j], "-0"))
+		if (my_countnbr(info[j]) != space(c[j]) - a)
 			print_error(4);
 	}
 	ft_lstaddback2(&(cub -> map_col), ft_lstnew2(s[0], info));

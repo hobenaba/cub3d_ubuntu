@@ -29,6 +29,9 @@ void	init_for_wind(t_exec *cub)
 	int			*ceiling;
 	t_infos2	*tmp;
 
+	cub->mlx.p_win = mlx_new_window(cub->mlx.p_mlx,
+			S_WIDTH, S_HEIGHT, "CUB3D");
+	cub->mlx.p_img = mlx_new_image(cub->mlx.p_mlx, S_WIDTH, S_HEIGHT);
 	tmp = cub -> infos.map_col;
 	if (!ft_strcmp(tmp ->type, "F"))
 	{
@@ -63,7 +66,8 @@ void	init_tools(t_exec *cub)
 	t_infos1	*t;
 	int			i;
 
-	t = cub -> infos.map_tex;cub->text = malloc (sizeof(t_texture) * 4);
+	t = cub -> infos.map_tex;
+	cub->text = malloc (sizeof(t_texture) * 4);
 	while (t)
 	{
 		if (!ft_strcmp(t -> type, "NO"))
@@ -77,9 +81,6 @@ void	init_tools(t_exec *cub)
 		init_textures(&(cub -> text[i]), t, &(cub ->mlx));
 		t = t -> next;
 	}
-	cub->mlx.p_win = mlx_new_window(cub->mlx.p_mlx,
-			S_WIDTH, S_HEIGHT, "CUB3D");
-	cub->mlx.p_img = mlx_new_image(cub->mlx.p_mlx, S_WIDTH, S_HEIGHT);
 	init_for_wind(cub);
 	cub -> infos.col_len = dl_strlen(cub ->infos.map, 0);
 	cub -> infos.row_len = ft_strlen (cub -> infos.map[0]);

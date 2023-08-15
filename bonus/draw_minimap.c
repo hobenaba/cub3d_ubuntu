@@ -29,7 +29,7 @@ int	check_color(double x, double y, t_exec *cub)
 	x1 = floor (x / MTS_HEIGHT);
 	y1 = floor (y / MTS_HEIGHT);
 	if (x1 < 0 || y1 < 0 || x1 >= cub -> infos.row_len
-		|| y1 >= cub -> infos.col_len)
+		|| y1 >= cub -> infos.col_len || cub -> infos.map[y1][x1] == ' ')
 		return (cub -> tools.color_e);
 	else if (cub -> infos.map[y1][x1] != '1')
 		return (cub -> tools.color_mf);

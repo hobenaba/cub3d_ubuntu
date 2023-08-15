@@ -1,0 +1,16 @@
+F 0 ,178,   2
+C  1,1, 10
+
+
+SO                                         textures/colorstone.xpm
+EA textures/cobblestone_gray.xpm
+NO textures/blue_stone.xpm
+WE textures/redbrick.xpm
+
+ 11111111    1
+10111111    1111
+1111111                  
+                          
+111111111111111111
+10000000000000N1
+111111111111111111

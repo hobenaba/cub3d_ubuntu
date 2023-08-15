@@ -97,7 +97,9 @@ char	*the_process(char *str, int fd)
 	a = 0;
 	while (str != NULL)
 	{
-		if (a == 0 && (!ft_strcmp(str, "\n") || !ft_check_space(str)))
+		if (a == 0 && ft_strcmp(str, "\n") && !ft_check_space(str))
+			print_error(11);
+		if (a == 0 && (!ft_strcmp(str, "\n")))
 		{
 			free (str);
 			str = get_next_line(fd);

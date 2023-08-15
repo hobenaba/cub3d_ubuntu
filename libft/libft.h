@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <string.h>
 # include <fcntl.h>
-# include "ft_printf/ft_printf.h"
 # include "get_next_line/get_next_line.h"
 
 int		ft_strcmp(char *s1, char *s2);

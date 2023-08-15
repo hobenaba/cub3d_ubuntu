@@ -20,32 +20,33 @@ OBJECTS = $(SRCS:.c=.o)
 
 OBJECTS_B = $(SRCS_B:.c=.o)
 
-all : $(NAME)
+all : libft $(NAME)
+	@echo "\033[0;31m Compiled !!\033[0m"
 
-bonus : $(NAME_B)
+bonus : libft $(NAME_B)
+	@echo "\033[0;31m Compiled !!\033[0m"
 
-libft/libft.a : $(IMP)
-	@make -C libft
-
-$(NAME)	: libft/libft.a $(OBJECTS) 
-	@$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME) -L libft -lft -L libft/ft_printf -lftprintf -lmlx -lm -lX11 -lXext
+$(NAME)	:  $(OBJECTS) 
 	@echo "\033[0;31m CUB3D is compiling ...\033[0m"
+	@$(CC) $(CFLAGS) $(OBJECTS) -Llibft -lft   -lmlx -lm -lX11 -lXext -o $(NAME)
 
-$(NAME_B)	: libft/libft.a $(OBJECTS_B) 
-	@$(CC) $(CFLAGS) $(OBJECTS_B) -o $(NAME_B) -L libft -lft -L libft/ft_printf -lftprintf -lmlx -lm -lX11 -lXext
+
+$(NAME_B) :  $(OBJECTS_B) 
 	@echo "\033[0;31m CUB3D_BONUS is compiling ...\033[0m"
-
+	@$(CC) $(CFLAGS) $(OBJECTS_B) -o $(NAME_B) -Llibft -lft  -lmlx -lm -lX11 -lXext
+libft:
+	@$(MAKE) -C libft -s
 clean : 
 	@rm -rf $(OBJECTS) $(OBJECTS_B)
-	@make clean -C libft
+	@$(MAKE) clean -C libft -s
 
 fclean : clean
 	@rm -rf $(NAME) $(NAME_B)
-	@make fclean -C libft
+	@$(MAKE) fclean -C libft -s
 	@echo "\033[0;32m all clean \033[0m"
 
 re : fclean all
 
-phony : all clean fclean re libft
+.PHONY : all clean fclean re libft
 
 .SILENT : $(OBJECTS) $(OBJECTS_B)

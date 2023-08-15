@@ -12,17 +12,14 @@ OBJ = $(IMP:.c=.o)
 
 all	: $(NAME)
 
-ft_printf/libftprintf.a : 
-	@make -C ft_printf
 
-$(NAME) : $(SRCS) $(OBJ) ft_printf/libftprintf.a 
+$(NAME) : $(SRCS) $(OBJ)
 	@ar -rcs	$(NAME)	$(OBJ) 
 clean :
 	@rm -rf $(OBJ)
-	@make clean -C ft_printf
 
 fclean : clean
-	@rm -rf $(NAME) ft_printf/libftprintf.a
+	@rm -rf $(NAME)
 
 re :	fclean all
 
