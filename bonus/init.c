@@ -51,15 +51,13 @@ void	init_bonus(t_exec *cub)
 }
 
 void	init_bonus_tools(t_exec *cub)
-{
+{	
+	cub->mlx.p_mlx = mlx_init();
+	cub->ray_inf = ft_rayinit(cub->infos.player);
+	init_tools(cub);
 	cub->mouse_x = 0;
 	cub->mouse_y = 0;
 	cub->state_pis = 0;
-	cub->ray_inf = ft_rayinit(cub->infos.player);
-	cub->mlx.p_mlx = mlx_init();
-	cub->mlx.p_win = mlx_new_window(cub->mlx.p_mlx,
-			S_WIDTH, S_HEIGHT, "CUB3D");
-	cub->mlx.p_img = mlx_new_image(cub->mlx.p_mlx, S_WIDTH, S_HEIGHT);
 	cub->mlx.p_mimg = mlx_new_image(cub->mlx.p_mlx, MS_WIDTH, MS_HEIGHT);
 	cub->move_down = 0;
 	cub->move_up = 0;
@@ -68,6 +66,5 @@ void	init_bonus_tools(t_exec *cub)
 	cub->rot_right = 0;
 	cub->rot_left = 0;
 	cub->move_weapon = 0;
-	init_tools(cub);
 	init_bonus(cub);
 }

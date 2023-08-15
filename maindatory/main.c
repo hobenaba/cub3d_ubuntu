@@ -59,19 +59,15 @@ int	main(int ac, char **av)
 {
 	t_exec	cub;
 
-	init(&(cub.infos));
 	if (ac != 2)
 	{
 		printf("Error\nOnly 1 argument\n");
 		exit (1);
 	}
+	init(&(cub.infos));
 	map(av[1], &(cub.infos));
 	cub.ray_inf = ft_rayinit(cub.infos.player);
 	cub.mlx.p_mlx = mlx_init();
-	cub.mlx.p_win = mlx_new_window(cub.mlx.p_mlx,
-			S_WIDTH, S_HEIGHT, "CUB3D");
-	cub.mlx.p_img = mlx_new_image(cub.mlx.p_mlx, S_WIDTH, S_HEIGHT);
-	cub.mlx.p_mimg = mlx_new_image(cub.mlx.p_mlx, MS_WIDTH, MS_HEIGHT);
 	init_tools(&cub);
 	ft_init_keys(&cub);
 	ft_execute(&cub);

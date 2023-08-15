@@ -4,8 +4,7 @@ SO textures/colorstone.xpm
 EA textures/cobblestone_gray.xpm
 NO textures/blue_stone.xpm
 WE textures/redbrick.xpm
-
-C      0, 55,255 
+C      0, 55,255
 
 11111111111111111
 10000000000000001
